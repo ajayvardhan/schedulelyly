@@ -1,9 +1,27 @@
-<% @reservations.each do |res| %>
-  <div class='reservations'>
-    <h4>Customer: <%= res.exam.client %></h4>
-    <h4>Exam: <%= res.exam.name %></h4>
-    <div>Student: <%= res.client_first_name %> <%= res.client_last_name %></div>
-    <div>Exam Date: <%= Time.at res.datetime %></div>
-  </div>
-
-<% end %>
+<div class="container">
+  	<h2><%= link_to 'Home', root_path %></h2>
+	<h2>Reservations</h2>
+	<hr/><br/>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Customer</th>
+				<th>Exam</th>
+				<th>Student</th>
+				<th>Exam Date</th>
+				<th>Score</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @reservations.each do |res| %>
+				<tr class='reservations'>
+					<td><%= res.exam.client %></td>
+					<td><%= res.exam.name %></td>
+					<td><%= res.client_first_name %> <%= res.client_last_name %></td>
+					<td><%= Time.at res.datetime %></td>
+					<td><%= res.score %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

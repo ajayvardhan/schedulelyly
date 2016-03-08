@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'exam/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+  get 'reservations' => 'reservations#index'
+
+  #get 'exam' => 'exam#new'
 
 
   # Example of regular route:
@@ -14,6 +20,8 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
+  resources :exams
 
   # Example resource route with options:
   #   resources :products do

@@ -10,6 +10,7 @@ EXAMS = %w(cs440 abe324 bus201 cs101 cs202 cs300 excel103 corp1080 pp220 dip102)
 CLIENTS = %w(facebook cisco microsoft ibm dell avaya)
 FIRST_NAMES = %w(Jide Matt Greg Leo Todd Steve Tyler Lani Michelle Karen Danny Sara Sarah Lisa)
 LAST_NAMES = %w(Maloney Fajobi Odonnell Anderson Smith Robinson Sanders Bailey Berry)
+SCORES = %w(10 20 30 40 50 60 70 80 90)
 PAST_EXAM_DATES = 15.days.ago.to_i..Time.now.to_i
 
 
@@ -23,6 +24,7 @@ def create_reservation
   exam.reservations.create(
     client_first_name: FIRST_NAMES.sample,
     client_last_name: LAST_NAMES.sample,
+    score: rand(100),
     datetime:rand(PAST_EXAM_DATES)
   )
 end

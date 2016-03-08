@@ -1,5 +1,12 @@
-<h1>Welcome to Schedulelyly!!</h1>
-
-<%= link_to 'Schedule an exam' %>
-
-<%= link_to 'View past reservations', reservations_path%>
+<div class="container">
+	<h1>Welcome to Schedulelyly!!</h1>
+	<hr/>
+	<div class="row">
+		<div class="col-xs-6">
+			<h2><%= link_to 'Schedule an exam', new_exam_path %></h2>
+		</div>
+		<div class="col-xs-6">
+			<h2><%= link_to 'View past reservations', reservations_path %></h2>
+		</div>
+	</div>
+</div>
